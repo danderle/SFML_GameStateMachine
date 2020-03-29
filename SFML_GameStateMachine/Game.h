@@ -5,6 +5,7 @@
 #include "StateMachine.h"
 #include "InputManager.h"
 #include "AssetManager.h"
+#include "DEFINITIONS.h"
 
 struct GameData
 {
@@ -17,11 +18,12 @@ struct GameData
 class Game
 {
 public:
-	Game() = delete;
-	Game(int width, int height, std::string title);
+	Game();
+	void Run();
 
 private:
-	void Run();
+	void BasicSetup();
+	void LoadAssets();
 
 private:
 	sf::Clock clock;
